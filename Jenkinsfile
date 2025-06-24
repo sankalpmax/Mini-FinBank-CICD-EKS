@@ -16,7 +16,7 @@ pipeline {
         }
 	stage('Docker Run Container') {
             steps {
-                sh 'docker run -d -p 5000:5000 --name yubi sankalparava/ev-car:02'
+                sh 'docker run -d -p 5000:5000 --name yubi sankalparava/fintech-bank:01'
 			}
 		}
 	}
