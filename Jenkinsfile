@@ -18,6 +18,15 @@ pipeline {
                 sh 'docker run -d -p 5000:5000 --name yubi sankalparava/fintech-bank:01'
 			}
 		}
-	}
 
+	stage('Docker Push') {
+    		steps {
+        		script {
+           		 docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
+               		 docker.image('sankalparava/fintech-bank:01').push()
+        	   			 }		
+ 	       			}
+    			}
+		}	
+	}
 }
