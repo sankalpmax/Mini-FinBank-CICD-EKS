@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/sankalpmax/Mini-Fin'
-            }
-        }
-
          stage('Docker Build Image') {
             steps {
                 sh 'docker build -t sankalparava/ev-car:02 .'
