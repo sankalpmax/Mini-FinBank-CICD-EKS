@@ -13,7 +13,7 @@ pipeline {
                 sh 'docker build -t sankalparava/fintech-bank:01 .'
 		            }
        		 }
- 	stage('Docker Build Image') {
+ 	stage('Docker Run Conatiner') {
             steps {
                 sh 'docker run -d -p 5000:5000 --name yubi sankalparava/fintech-bank:01'
 			}
